@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Customer Forecasting</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='wine_icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Customer Forecasting</span></h2>
+            <div class='description'>
+    			<p>Check whether customer could leave or will be staying chances.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <input class="form-input" type="text" name="CreditScore" placeholder="CreditScore eg. 619"><br>
+                <select class="form-input" name="Geography">
+                    <option value="">Select Geography</option>
+                    <option value="0">France</option>
+                    <option value="1">Spain</option>
+                    <option value="2">Germany</option>
+                </select>
+                <h4></h4>
+                <select class="form-input" name="Gender">
+                    <option value="">Select Gender</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+                <h4></h4>
+                <input class="form-input" type="text" name="Age" placeholder="Age eg. 42"><br>
+                <input class="form-input" type="text" name="Tenure" placeholder="Tenure eg. 2"><br>
+                <input class="form-input" type="text" name="Balance" placeholder="Balance eg. 83807.86"><br>
+                <input class="form-input" type="text" name="NumOfProducts" placeholder="Num Of Products eg. 2"><br>
+                <select class="form-input" name="HasCrCard">
+                    <option value="">Select Credit Card Presence</option>
+                    <option value="1">Have Credit Card</option>
+                    <option value="0">Don't have Credit Card</option>
+                </select>
+                <h4></h4>
+                <select class="form-input" name="IsActiveMember">
+                    <option value="">Select Member Type</option>
+                    <option value="1">Active Member</option>
+                    <option value="0">Inactive Member</option>
+                </select>
+                <h4></h4>
+                <input class="form-input" type="text" name="EstimatedSalary" placeholder="EstimatedSalary eg. 112542.58"><br>
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/tanujdhiman/"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/tanuj-dhiman-a5647a16b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.kaggle.com/tanujdhiman/"><i class="fab fa-kaggle fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by TeamNoobs.</p>
+       </div>
+
+    </body>
+</html>
